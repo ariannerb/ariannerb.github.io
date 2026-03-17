@@ -84,7 +84,27 @@
   .lang-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--light); font-size: 0.85rem; }
   .lang-row:last-child { border-bottom: none; }
 
-  .contact-body { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+  .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(10%);
+    transition: filter 0.3s, transform 0.3s;
+  }
+  .gallery-grid img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+  }
+  @media (max-width: 640px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   .contact-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
   .contact-list { display: flex; flex-direction: column; }
   .contact-row { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 0; border-bottom: 1px solid var(--light); font-size: 0.82rem; }
@@ -122,6 +142,7 @@
     <ul class="nav-links">
       <li><a href="#about">Sobre mí</a></li>
       <li><a href="#cv">Currículum</a></li>
+      <li><a href="#gallery">Galería</a></li>
       <li><a href="#contact">Contacto</a></li>
     </ul>
   </div>
@@ -340,10 +361,27 @@
   </div>
 </section>
 
+<section id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Galería</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="foto.jpeg" alt="Arianne">
+      <img src="foto2.jpeg" alt="Arianne" style="object-position:center;">
+      <img src="foto3.jpeg" alt="Arianne" style="object-position:center;">
+      <img src="foto4.jpeg" alt="Arianne">
+      <img src="foto5.jpeg" alt="Arianne" style="object-position:center;">
+      <img src="foto6.jpeg" alt="Arianne" style="object-position:center;">
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-num">03</span>
+      <span class="section-num">05</span>
       <h2>Contacto</h2>
     </div>
     <div class="contact-body">
