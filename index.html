@@ -286,6 +286,27 @@
     </div>
 
     <div class="cv-block">
+      <div class="cv-block-title">Disponibilidad</div>
+      <div style="margin-top:1.2rem; display:flex; flex-direction:column; gap:0.8rem;">
+        <div class="contact-row" style="padding:0.7rem 0;">
+          <span class="meta-label" style="margin:0;">Horario general</span>
+          <span style="font-size:0.85rem; color:var(--text);">Mañanas hasta las 14h · Fines de semana completos</span>
+        </div>
+        <div class="contact-row" style="padding:0.7rem 0;">
+          <span class="meta-label" style="margin:0;">Jornada buscada</span>
+          <span style="font-size:0.85rem; color:var(--text);">16h – 20h semanales</span>
+        </div>
+        <div class="contact-row" style="padding:0.7rem 0;">
+          <span class="meta-label" style="margin:0;">Prácticas de telecomunicaciones</span>
+          <span style="font-size:0.85rem; color:var(--text);">Hasta 40h semanales</span>
+        </div>
+        <div style="padding:0.7rem 0; border-bottom:none; text-align:center;">
+          <span style="font-size:0.85rem; color:var(--muted);">Posibles laboratorios miércoles y jueves por la mañana (no disponible esos días en horario de mañana)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-block">
       <div class="cv-block-title">Competencias</div>
       <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.2rem;">
         <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Liderazgo</span>
@@ -340,7 +361,7 @@
         </div>
       </div>
       <div>
-        <form class="contact-form" action="https://formspree.io/f/xvzwvakn" method="POST" onsubmit="handleSubmit(event)">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvzwvakn" method="POST">
           <div class="form-group">
             <label>Nombre</label>
             <input type="text" placeholder="Tu nombre" required>
@@ -368,19 +389,33 @@
 </footer>
 
 <script>
-  function handleSubmit(e) {
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
     var btn = document.getElementById('submit-btn');
-    btn.textContent = 'Mensaje enviado';
-    btn.style.opacity = '0.5';
-    btn.disabled = true;
-    setTimeout(function() {
-      btn.textContent = 'Enviar mensaje';
-      btn.style.opacity = '1';
-      btn.disabled = false;
-      e.target.reset();
-    }, 3000);
-  }
+    var data = new FormData(form);
+    fetch('https://formspree.io/f/xvzwvakn', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      if (res.ok) {
+        btn.textContent = 'Mensaje enviado ✓';
+        btn.style.opacity = '0.6';
+        btn.disabled = true;
+        form.reset();
+        setTimeout(function() {
+          btn.textContent = 'Enviar mensaje';
+          btn.style.opacity = '1';
+          btn.disabled = false;
+        }, 3000);
+      } else {
+        btn.textContent = 'Error, inténtalo de nuevo';
+      }
+    }).catch(function() {
+      btn.textContent = 'Error, inténtalo de nuevo';
+    });
+  });
 </script>
 </body>
 </html>
