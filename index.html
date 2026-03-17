@@ -37,8 +37,7 @@
   .nav-links a:hover { color: var(--text); }
 
   #hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--light); }
-  #hero h1 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
-  #hero h1 em { font-style: italic; color: var(--accent); }
+  #hero h1 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.5rem; color: var(--text); }
   #hero p { font-size: 1rem; color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 2.5rem; }
   .hero-links { display: flex; gap: 1rem; }
 
@@ -130,8 +129,8 @@
 
 <div id="hero">
   <div class="container">
-    <h1>Estudiante de<br><em>Ingeniería</em> en UC3M.</h1>
-    <p>Interesada en electrónica, sistemas embebidos y desarrollo de software. Cómoda tanto en hardware como en software.</p>
+    <h1>Arianne Rodríguez Botana.</h1>
+    <p>Estudiante, trabajadora, bilingüe y apasionada por aprender. Me muevo bien en entornos exigentes.</p>
     <div class="hero-links">
       <a href="#cv" class="btn">Ver currículum</a>
       <a href="curriculum.pdf" download class="btn btn-outline">Descargar CV</a>
@@ -148,9 +147,10 @@
     </div>
     <div class="about-body">
       <div class="about-text">
-        <p>Soy estudiante de 3.º de Ingeniería en Tecnologías de Telecomunicación en la Universidad Carlos III de Madrid, con enfoque en microelectrónica, telecomunicaciones y sistemas digitales.</p>
-        <p>Trabajo habitualmente en proyectos que combinan diseño hardware y software: desde implementaciones en FPGA hasta aplicaciones web con Spring Boot y sistemas embebidos con STM32.</p>
-        <p>Busco prácticas donde pueda seguir aprendiendo y aportar desde el primer día.</p>
+        <p>Soy Arianne, tengo 20 años y nací en Madrid. Española y americana de nacimiento, crecí en un entorno bilingüe que me enseñó a adaptarme, comunicarme y ver las cosas desde perspectivas distintas.</p>
+        <p>Soy una persona ambiciosa, directa y con mucha energía. Me tomo en serio todo lo que hago, ya sea estudiar ingeniería, atender a un cliente o jugar un partido de baloncesto. Aprendo rápido y no me asustan los entornos exigentes — al contrario, me motivan.</p>
+        <p>Fuera de los estudios toco el piano, juego al ajedrez y sigo el fútbol con pasión. El deporte y la música me han enseñado disciplina, trabajo en equipo y constancia — valores que aplico en todo lo que hago.</p>
+        <p>Busco incorporarme a un equipo donde pueda crecer, aportar desde el primer día y seguir aprendiendo.</p>
       </div>
       <div class="about-meta">
         <div class="meta-item">
@@ -158,8 +158,12 @@
           <div class="meta-value">Paracuellos de Jarama, Madrid</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Universidad</div>
-          <div class="meta-value">UC3M · 3.º Ingeniería</div>
+          <div class="meta-label">Nacionalidad</div>
+          <div class="meta-value">Española & Americana</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Estudios</div>
+          <div class="meta-value">Ingeniería · UC3M · 3.º curso</div>
         </div>
         <div class="meta-item">
           <div class="meta-label">Disponibilidad</div>
@@ -190,6 +194,19 @@
             <div class="tl-title">Ingeniería en Tecnologías de Telecomunicación</div>
             <div class="tl-org">Universidad Carlos III de Madrid</div>
             <div class="tl-desc">Grado de cuatro años impartido íntegramente en inglés, centrado en el diseño y análisis de sistemas de comunicación, electrónica analógica y digital, procesado de señales y redes de telecomunicación. La formación combina una sólida base teórica en física y matemáticas con laboratorios aplicados en áreas como microondas, fotónica, microprocesadores y arquitectura de redes.</div>
+            <div style="margin-top:1rem;">
+              <div class="meta-label" style="margin-bottom:0.6rem;">Asignaturas que estoy cursando este cuatrimestre</div>
+              <div class="tl-tags">
+                <span class="tag">Análisis y diseño de circuitos</span>
+                <span class="tag">Sist. digitales y microprocesadores</span>
+                <span class="tag">Tecnologías de alta frecuencia</span>
+                <span class="tag">Fotónica</span>
+                <span class="tag">Circuitos integrados y microelectrónica</span>
+                <span class="tag">Conmutación</span>
+                <span class="tag">Aplicaciones Móviles</span>
+                <span class="tag">Aplicaciones Web</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -243,18 +260,16 @@
       <div class="skills-section" style="margin-top:1.5rem;">
         <div class="skills-group">
           <div class="skills-group-label">Hardware y sistemas</div>
-          <div class="skill-row"><span class="skill-name">STM32 / C (bare-metal)</span><span class="skill-level">Avanzado</span></div>
+          <div class="skill-row"><span class="skill-name">STM32 / C</span><span class="skill-level">Avanzado</span></div>
           <div class="skill-row"><span class="skill-name">VHDL / Vivado</span><span class="skill-level">Avanzado</span></div>
           <div class="skill-row"><span class="skill-name">Circuitos RF / Microondas</span><span class="skill-level">Intermedio</span></div>
-          <div class="skill-row"><span class="skill-name">Fotónica</span><span class="skill-level">Intermedio</span></div>
-          <div class="skill-row"><span class="skill-name">Señales y Sistemas</span><span class="skill-level">Intermedio</span></div>
+          <div class="skill-row"><span class="skill-name">AWR</span><span class="skill-level">Básico</span></div>
         </div>
         <div class="skills-group">
           <div class="skills-group-label">Software y herramientas</div>
           <div class="skill-row"><span class="skill-name">Python</span><span class="skill-level">Intermedio</span></div>
           <div class="skill-row"><span class="skill-name">Java / Spring Boot</span><span class="skill-level">Intermedio</span></div>
           <div class="skill-row"><span class="skill-name">HTML / CSS / JavaScript</span><span class="skill-level">Intermedio</span></div>
-          <div class="skill-row"><span class="skill-name">Git</span><span class="skill-level">Intermedio</span></div>
           <div class="skill-row"><span class="skill-name">MATLAB</span><span class="skill-level">Avanzado</span></div>
         </div>
       </div>
@@ -265,8 +280,26 @@
       <div class="lang-list" style="margin-top:0.5rem;">
         <div class="lang-row"><span>Español</span><span style="color:var(--muted);font-size:0.75rem;">Nativo</span></div>
         <div class="lang-row"><span>Inglés</span><span style="color:var(--muted);font-size:0.75rem;">Bilingüe / Nativo</span></div>
-        <div class="lang-row"><span>Alemán</span><span style="color:var(--muted);font-size:0.75rem;">Básico</span></div>
-        <div class="lang-row"><span>Francés</span><span style="color:var(--muted);font-size:0.75rem;">Básico</span></div>
+        <div class="lang-row"><span>Alemán</span><span style="color:var(--muted);font-size:0.75rem;">Aprendiendo</span></div>
+        <div class="lang-row"><span>Francés</span><span style="color:var(--muted);font-size:0.75rem;">Aprendiendo</span></div>
+      </div>
+    </div>
+
+    <div class="cv-block">
+      <div class="cv-block-title">Competencias</div>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.2rem;">
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Liderazgo</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Adaptabilidad</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Resolución de problemas</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Iniciativa</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Trabajo en equipo</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Actitud positiva</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Ganas de aprender</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Comunicación</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Orientación al cliente</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Organización</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Responsabilidad</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">Pensamiento analítico</span>
       </div>
     </div>
 
@@ -277,6 +310,9 @@
         <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">🎹 Piano</span>
         <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">♟ Ajedrez</span>
         <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">🏀 Baloncesto</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">🎵 Música</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">🛍 Salir de compras</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">📱 Redes sociales</span>
       </div>
     </div>
 
@@ -304,14 +340,14 @@
         </div>
       </div>
       <div>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <form class="contact-form" action="https://formspree.io/f/xvzwvakn" method="POST" onsubmit="handleSubmit(event)">
           <div class="form-group">
             <label>Nombre</label>
             <input type="text" placeholder="Tu nombre" required>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="text" placeholder="tu correo" required>
+            <input type="email" name="email" placeholder="tu correo" required>
           </div>
           <div class="form-group">
             <label>Mensaje</label>
