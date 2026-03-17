@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arianne Rodríguez Botana — Estudiante de Ingeniería</title>
+<meta name="description" content="Web personal de Arianne Rodríguez Botana, estudiante de Ingeniería en la Universidad Carlos III de Madrid. Especializada en microelectrónica, sistemas embebidos y telecomunicaciones.">
+<meta name="keywords" content="Arianne Rodríguez Botana, ingeniería, UC3M, microelectrónica, sistemas embebidos, STM32, FPGA, Madrid">
+<meta name="author" content="Arianne Rodríguez Botana">
+<meta property="og:title" content="Arianne Rodríguez Botana — Estudiante de Ingeniería">
+<meta property="og:description" content="Estudiante de Ingeniería en UC3M. Microelectrónica, sistemas embebidos y telecomunicaciones.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --text: #1a1a18;
+    --muted: #6b6b65;
+    --light: #e8e8e2;
+    --accent: #2b4a8f;
+    --serif: 'EB Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.6; }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+
+  nav {
+    border-bottom: 1px solid var(--light);
+    padding: 1.4rem 0;
+    position: sticky; top: 0;
+    background: var(--bg);
+    z-index: 10;
+  }
+  nav .container { display: flex; justify-content: space-between; align-items: center; }
+  .nav-name { font-family: var(--serif); font-size: 1.15rem; color: var(--text); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  #hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--light); }
+  #hero h1 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+  #hero h1 em { font-style: italic; color: var(--accent); }
+  #hero p { font-size: 1rem; color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 2.5rem; }
+  .hero-links { display: flex; gap: 1rem; }
+
+  .btn { display: inline-block; font-size: 0.78rem; letter-spacing: 0.06em; text-decoration: none; padding: 0.65rem 1.4rem; border: 1px solid var(--text); color: var(--text); transition: background 0.2s, color 0.2s; }
+  .btn:hover { background: var(--text); color: var(--bg); }
+  .btn-outline { border-color: var(--light); color: var(--muted); }
+  .btn-outline:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  section { padding: 5rem 0; border-bottom: 1px solid var(--light); }
+  .section-header { display: flex; align-items: baseline; gap: 1.2rem; margin-bottom: 3rem; }
+  .section-num { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; }
+  h2 { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; letter-spacing: -0.01em; }
+
+  /* ABOUT */
+  .about-body { display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem; }
+  .about-text p { font-size: 0.92rem; color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-meta { display: flex; flex-direction: column; gap: 1.8rem; }
+  .meta-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .meta-value { font-size: 0.88rem; line-height: 1.7; }
+
+  /* CV */
+  .cv-block { margin-bottom: 3.5rem; }
+  .cv-block:last-child { margin-bottom: 0; }
+
+  .cv-block-title {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 0;
+  }
+
+  .timeline { display: flex; flex-direction: column; }
+  .timeline-item { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 1.8rem 0; border-bottom: 1px solid var(--light); }
+  .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .tl-date { font-size: 0.78rem; color: var(--muted); padding-top: 0.1rem; line-height: 1.5; }
+  .tl-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; margin-bottom: 0.2rem; }
+  .tl-org { font-size: 0.78rem; color: var(--accent); margin-bottom: 0.7rem; }
+  .tl-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.8rem; }
+  .tl-desc:last-child { margin-bottom: 0; }
+  .tl-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag { font-size: 0.68rem; color: var(--muted); border: 1px solid var(--light); padding: 0.2rem 0.55rem; }
+
+  /* SKILLS GRID */
+  .skills-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .skills-group {}
+  .skills-group-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.9rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--light); }
+  .skill-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .skill-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.83rem; padding: 0.35rem 0; border-bottom: 1px solid var(--light); }
+  .skill-row:last-child { border-bottom: none; }
+  .skill-name { color: var(--text); }
+  .skill-level { font-size: 0.7rem; color: var(--muted); }
+
+  /* LANGUAGES */
+  .lang-list { display: flex; flex-direction: column; }
+  .lang-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--light); font-size: 0.85rem; }
+  .lang-row:last-child { border-bottom: none; }
+  .lang-name { color: var(--text); }
+  .lang-level { font-size: 0.75rem; color: var(--muted); }
+
+  /* CONTACT */
+  .contact-body { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .contact-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
+  .contact-list { display: flex; flex-direction: column; }
+  .contact-row { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 0; border-bottom: 1px solid var(--light); font-size: 0.82rem; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row-label { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .contact-row a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+  .contact-row a:hover { color: var(--accent); }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .form-group input, .form-group textarea { font-family: var(--sans); font-size: 0.88rem; font-weight: 300; background: transparent; border: 1px solid var(--light); color: var(--text); padding: 0.7rem 0.9rem; outline: none; transition: border-color 0.2s; resize: none; }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--muted); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: #bbb; }
+  .btn-send { font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.06em; background: var(--text); color: var(--bg); border: 1px solid var(--text); padding: 0.75rem; cursor: pointer; transition: background 0.2s, color 0.2s; margin-top: 0.4rem; }
+  .btn-send:hover { background: transparent; color: var(--text); }
+
+  footer { padding: 2.5rem 0; }
+  footer .container { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); }
+
+  .reveal { opacity: 1; transform: none; }
+
+  @media (max-width: 640px) {
+    .about-body, .contact-body, .skills-section { grid-template-columns: 1fr; gap: 2.5rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    nav .container { flex-direction: column; gap: 0.8rem; }
+    footer .container { flex-direction: column; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#hero" class="nav-name">Arianne Rodríguez</a>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#cv">Currículum</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="container">
+    <h1>Estudiante de<br><em>Ingeniería</em> en UC3M.</h1>
+    <p>Interesada en electrónica, sistemas embebidos y desarrollo de software. Cómoda tanto en hardware como en software.</p>
+    <div class="hero-links">
+      <a href="#cv" class="btn">Ver currículum</a>
+      <a href="curriculum.pdf" download class="btn btn-outline">Descargar CV</a>
+      <a href="#contact" class="btn btn-outline">Contactar</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2>Sobre mí</h2>
+    </div>
+    <div class="about-body">
+      <div class="about-text reveal">
+        <p>Soy estudiante de 3.º de Ingeniería en la Universidad Carlos III de Madrid, con enfoque en microelectrónica, telecomunicaciones y sistemas digitales.</p>
+        <p>Trabajo habitualmente en proyectos que combinan diseño hardware y software: desde implementaciones en FPGA hasta aplicaciones web con Spring Boot y sistemas embebidos con STM32.</p>
+        <p>Busco prácticas donde pueda seguir aprendiendo y aportar desde el primer día.</p>
+      </div>
+      <div class="about-meta reveal">
+        <div class="meta-item">
+          <div class="meta-label">Ubicación</div>
+          <div class="meta-value">Madrid, España</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Universidad</div>
+          <div class="meta-value">UC3M · 3.º Ingeniería</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Disponibilidad</div>
+          <div class="meta-value">Prácticas · Proyectos</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Contacto</div>
+          <div class="meta-value"><a href="/cdn-cgi/l/email-protection#b7d6c5ded6d9d9d2c5d58684f7d0dad6dedb99d4d8da" style="color:var(--accent);text-decoration:none;"><span class="__cf_email__" data-cfemail="5b3a29323a35353e29396a681b3c363a323775383436">[email&#160;protected]</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2>Currículum</h2>
+    </div>
+
+    <!-- Formación -->
+    <div class="cv-block reveal">
+      <div class="cv-block-title">Formación académica</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tl-date">2023 — Presente</div>
+          <div class="tl-content">
+            <div class="tl-title">Grado en Ingeniería</div>
+            <div class="tl-org">Universidad Carlos III de Madrid</div>
+            <div class="tl-desc">Formación en electrónica, telecomunicaciones y sistemas digitales. Áreas principales: microelectrónica, fotónica, electromagnética y microondas, señales y sistemas, sistemas embebidos y aplicaciones web.</div>
+            <div style="margin-top:1.2rem;">
+              <div class="meta-label" style="margin-bottom:0.8rem;">Asignaturas cursadas — 2º cuatrimestre 25/26</div>
+              <div class="tl-tags">
+                <span class="tag">Análisis y diseño de circuitos</span>
+                <span class="tag">Sist. digitales basados en microprocesadores</span>
+                <span class="tag">Tecnologías de alta frecuencia</span>
+                <span class="tag">Fotónica</span>
+                <span class="tag">Circuitos integrados y microelectrónica</span>
+                <span class="tag">Conmutación</span>
+                <span class="tag">Aplicaciones Móviles</span>
+                <span class="tag">Aplicaciones Web</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyectos -->
+    <div class="cv-block reveal">
+      <div class="cv-block-title">Proyectos de laboratorio</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="tl-date">Lab · 2026<br>CIM</div>
+          <div class="tl-content">
+            <div class="tl-title">Filtro FIR en FPGA</div>
+            <div class="tl-org">Basys3 · Vivado</div>
+            <div class="tl-desc">Diseño e implementación de filtro FIR con ventana Hamming (N=8, fc=1 kHz, fs=10 kHz) en VHDL. Arquitecturas pipeline y paralela. Análisis de síntesis: estrategia AreaOptimized con DSPs vs. Default con LUTs. Fmax ≈ 149 MHz.</div>
+            <div class="tl-tags">
+              <span class="tag">VHDL</span><span class="tag">Vivado</span><span class="tag">DSP</span><span class="tag">FPGA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-date">Lab · 2026<br>Embebidos</div>
+          <div class="tl-content">
+            <div class="tl-title">Sensor Ultrasónico con STM32</div>
+            <div class="tl-org">NUCLEO-L152RE · HC-SR04</div>
+            <div class="tl-desc">Medición de distancia mediante acceso directo a registros: GPIO, TIM, ADC, EXTI/NVIC y UART. Sin capa HAL para periféricos de control. Depuración de bugs en ISR, ADC y redirección de printf por UART.</div>
+            <div class="tl-tags">
+              <span class="tag">C</span><span class="tag">STM32</span><span class="tag">Timers</span><span class="tag">UART</span><span class="tag">ADC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-date">Lab · 2026<br>Fotónica</div>
+          <div class="tl-content">
+            <div class="tl-title">Caracterización LED / Fotodiodo</div>
+            <div class="tl-org">Práctica 1 · Circuito BJT</div>
+            <div class="tl-desc">Caracterización eléctrica y óptica de un LED y un fotodiodo integrados en un circuito con transistor BJT. Obtención de curvas características y análisis de respuesta espectral.</div>
+            <div class="tl-tags">
+              <span class="tag">Fotónica</span><span class="tag">BJT</span><span class="tag">LED</span><span class="tag">Fotodiodo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-date">Lab · 2026<br>Redes</div>
+          <div class="tl-content">
+            <div class="tl-title">Patricia Trie — IP Routing</div>
+            <div class="tl-org">Longest-Prefix Matching</div>
+            <div class="tl-desc">Implementación en C de un Patricia Trie para encaminamiento IP. Algoritmo de compresión con gestión de nodos fantasma y búsqueda por prefijo más largo.</div>
+            <div class="tl-tags">
+              <span class="tag">C</span><span class="tag">Algoritmos</span><span class="tag">Redes</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Habilidades -->
+    <div class="cv-block reveal">
+      <div class="cv-block-title">Habilidades técnicas</div>
+      <div class="skills-section" style="margin-top:1.5rem;">
+        <div class="skills-group">
+          <div class="skills-group-label">Hardware y sistemas</div>
+          <div class="skill-list">
+            <div class="skill-row"><span class="skill-name">STM32 / C (bare-metal)</span><span class="skill-level">Avanzado</span></div>
+            <div class="skill-row"><span class="skill-name">VHDL / Vivado</span><span class="skill-level">Avanzado</span></div>
+            <div class="skill-row"><span class="skill-name">Circuitos RF / Microondas</span><span class="skill-level">Intermedio</span></div>
+            <div class="skill-row"><span class="skill-name">Fotónica</span><span class="skill-level">Intermedio</span></div>
+            <div class="skill-row"><span class="skill-name">Señales y Sistemas</span><span class="skill-level">Intermedio</span></div>
+          </div>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-label">Software y herramientas</div>
+          <div class="skill-list">
+            <div class="skill-row"><span class="skill-name">Python</span><span class="skill-level">Intermedio</span></div>
+            <div class="skill-row"><span class="skill-name">Java / Spring Boot</span><span class="skill-level">Intermedio</span></div>
+            <div class="skill-row"><span class="skill-name">HTML / CSS / JavaScript</span><span class="skill-level">Intermedio</span></div>
+            <div class="skill-row"><span class="skill-name">Git</span><span class="skill-level">Intermedio</span></div>
+            <div class="skill-row"><span class="skill-name">MATLAB</span><span class="skill-level">Avanzado</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Idiomas -->
+    <div class="cv-block reveal">
+      <div class="cv-block-title">Idiomas</div>
+      <div class="lang-list" style="margin-top:0.5rem;">
+        <div class="lang-row"><span class="lang-name">Español</span><span class="lang-level">Nativo</span></div>
+        <div class="lang-row"><span class="lang-name">Inglés</span><span class="lang-level">Avanzado</span></div>
+        <div class="lang-row"><span class="lang-name">Alemán</span><span class="lang-level">En aprendizaje</span></div>
+        <div class="lang-row"><span class="lang-name">Francés</span><span class="lang-level">En aprendizaje</span></div>
+      </div>
+    </div>
+
+    <!-- Hobbies -->
+    <div class="cv-block reveal">
+      <div class="cv-block-title">Intereses y hobbies</div>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.2rem;">
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">⚽ Fútbol</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">🎹 Piano</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">♟ Ajedrez</span>
+        <span class="tag" style="font-size:0.8rem; padding:0.4rem 0.9rem;">🏀 Baloncesto</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2>Contacto</h2>
+    </div>
+    <div class="contact-body">
+      <div class="contact-text reveal">
+        <p>Disponible para prácticas o colaboraciones en proyectos. No dudes en escribirme.</p>
+        <div class="contact-list">
+          <div class="contact-row">
+            <span class="contact-row-label">Email</span>
+            <a href="/cdn-cgi/l/email-protection#6f0e1d060e01010a1d0d5e5c2f08020e0603410c0002"><span class="__cf_email__" data-cfemail="41203328202f2f243323707201262c20282d6f222e2c">[email&#160;protected]</span></a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/arianne-rodriguez-botana-196651375/" target="_blank">Arianne Rodríguez Botana</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="tu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Mensaje</label>
+            <textarea rows="5" placeholder="Escribe aquí tu mensaje..." required></textarea>
+          </div>
+          <button type="submit" class="btn-send" id="submit-btn">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Arianne Rodríguez</span>
+    <span>Madrid, España</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function 
